@@ -53,7 +53,7 @@ class Receipt:
         try:
             start_time = datetime.now()
             process = subprocess.Popen([path, self.repository, self.branch], stdin=subprocess.PIPE)
-            process.communicate(input=json.puts(self.payload) + '\n')
+            process.communicate(input=json.dumps(self.payload) + '\n')
             duration = datetime.now() - start_time
 
             if process.returncode == 0:
